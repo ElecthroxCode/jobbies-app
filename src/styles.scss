@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+@import "styles/colors";
+@import url('https://fonts.googleapis.com/css2?family=Grechen+Fuemen&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+*{margin: 0; padding: 0; box-sizing: border-box;
+    font-family: "Raleway", serif;
+    font-optical-sizing: auto;
+    font-style: normal;}
+html,body{height: 100%;}
+
+body{
+    overflow-y: scroll;
+}
+
+.title-principal{
+    font-family: "Grechen Fuemen", serif;
+    font-weight: 400;
+    font-style: normal;
+    
+}
+
+
+

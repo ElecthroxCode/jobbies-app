@@ -1,0 +1,56 @@
+<div [style.padding]="'130px'">
+   
+        <a class="link" (click)="showlogin()"> {{keywordLogin}}</a>
+    
+   
+    <div class="container-register">
+       @if (!isShowFormRegister) {
+        <fieldset>
+            <legend><h3>Registro de usuario</h3></legend>
+            <form action="">
+                <div class="data-text">
+                    <label for="">Tu nombre completo</label>
+                    <input type="text" name="" id="">
+                </div>
+                <div class="data-text">
+                    <label for="">Tu correo eléctronico</label>
+                    <input type="text" name="" id="">
+                </div>
+                <div class="data-text">
+                    <label for="">Tu contraseña</label>
+                    <input type="password" name="" id="">
+                </div>
+                <div class="data-text">
+                    <label for="">Repite tu contraseña</label>
+                    <input type="password" name="" id="">
+                </div>
+                <div class="data-text">
+                    <button type="button">Registrarse</button>
+                </div>
+            </form>
+        </fieldset>
+       }@else {
+       
+        <fieldset>
+            <legend><h3>Inicio de sesión</h3></legend>
+            <form action="">
+                
+                <div class="data-text">
+                    <label for="email">Correo eléctronico</label>
+                    <input type="text" name="" id="email">
+                </div>
+                <div class="data-text">
+                    <label for="">Contraseña</label>
+                    <input type="password" name="" id="">
+                </div>
+               
+                <div class="data-text">
+                    <button type="button">Iniciar sesión</button>
+                </div>
+            </form>
+        </fieldset>
+
+       }
+    </div>
+    
+</div>

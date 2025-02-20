@@ -1,0 +1,77 @@
+@import '../../../styles/colors';
+
+@mixin style-icons {
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 50%;
+}
+
+@mixin style-icons-hover {
+    background-color: #d0d0d075;
+}
+
+
+.card {
+    width: 100%;
+   
+
+    .header-card {
+        display: flex;
+        justify-content: space-between;
+
+        .status-job {
+            background-color: rgb(114, 214, 114);
+            padding: 0px 12px;
+            border-start-start-radius: 10px;
+            border-end-end-radius: 10px;
+            max-height: 20px;
+            font-weight: 500;
+        }
+
+        .rol {
+            color: #5d6363;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        .icons {
+            display: flex;
+            gap: .4rem;
+
+            .icon-edit {
+                @include style-icons;
+                transition: all .3s ease;
+
+                &:hover {
+                    @include style-icons-hover;
+                }
+            }
+
+            .icon-close {
+                @include style-icons;
+                transition: all .3s ease;
+
+                &:hover {
+                    @include style-icons-hover;
+                }
+            }
+        }
+
+    }
+
+    .content-card {
+        margin-top: 6px;
+
+        .url-job {
+            font-weight: bold;
+        }
+    }
+
+    .footer-card {
+        .date-job {
+            font-weight: bold;
+        }
+    }
+}

@@ -1,0 +1,58 @@
+
+@import "../../../styles/colors";
+
+.link{
+    color: red;
+    position: fixed;
+    cursor: pointer;
+    text-decoration: none;
+}
+.container-register{
+    display: grid;
+    place-content: center;
+    margin-top: 30px;
+    
+    fieldset{
+        width: 20rem;
+        padding: 36px;
+        border-radius: 6px;
+        border: 1px solid $color-primary;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+
+        legend{
+            padding: 8px;
+        }
+
+        .data-text{
+            display: flex;
+            flex-direction: column;
+            margin: 16px 0px;
+            gap: 10px;
+            label{
+                font-size: .8rem;
+                font-weight: bold;
+            }
+            input{
+                height: 36px;
+                padding: 8px;
+                font-size: 1.1rem;
+                outline: none;
+            }
+            button{
+                height: 40px;
+                background-color: $color-primary;
+                color: whitesmoke;
+                border: 2px solid;
+                border-color: transparent;
+                border-radius: 6px;
+                font-weight: 600;
+                transition: all .3s ease;
+                &:hover{
+                    border-color: $color-aux1;
+                }
+            }
+        }
+    }
+}
+
+

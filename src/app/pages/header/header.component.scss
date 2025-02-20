@@ -1,0 +1,98 @@
+@import '../../../styles/colors';
+
+header {
+    background-color: $color-primary;
+    color: $color-secondary;
+    padding: 4px 60px;
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+
+    .container-search {
+        display: flex;
+        gap: 40px;
+        justify-content: space-between;
+        align-items: center;
+
+       .img-logo{
+        width: 40px;
+        height: 40px;
+        background-image: url('/img/camello-brown.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+       }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+
+        .search {
+            border: 3px solid $color-secondary;
+            width: 40rem;
+            max-width: 300px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            border-radius: 8px;
+            background-color: #faf9f5;
+
+
+            input[type="text"] {
+                height: 100%;
+                width: 100%;
+                padding: 4px 10px;
+                border: none;
+                border-radius: 6px;
+                background-color: #faf9f5;
+                outline: none;
+                font-size: 1.2rem;
+                
+                
+
+                /* Aplicamos la animación */
+                &::placeholder {
+                    color: #a5a3a3;
+                    /* Color suave para el placeholder */
+                    animation: slidePlaceholder 2s ease-in-out infinite;
+                }
+
+                /* Animación para el placeholder */
+                @keyframes slidePlaceholder {
+                    0% {
+                        transform: translateY(100%);
+                        /* Empieza desde abajo */
+                    }
+
+                    50% {
+                        transform: translateY(0);
+                        /* Se posiciona en su lugar */
+                    }
+
+                    100% {
+                        transform: translateY(-100%);
+                        /* Se desliza hacia arriba */
+                    }
+                }
+            }
+
+
+
+        }
+
+    }
+
+    nav {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+
+        .login {
+            text-align: center;
+            font-weight: 600;
+            cursor: pointer;
+        }
+    }
+}

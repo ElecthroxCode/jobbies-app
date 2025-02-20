@@ -1,0 +1,82 @@
+<div class="content-container">
+
+    <div class="content">
+      @if (!showModal) {
+        <div class="cards">
+            <app-card-job></app-card-job>
+            <app-card-job></app-card-job>
+            <app-card-job></app-card-job>
+            <app-card-job></app-card-job>
+            <app-card-job></app-card-job>
+            <app-card-job></app-card-job>
+            <app-card-job></app-card-job>
+            <app-card-job></app-card-job>
+            <app-card-job></app-card-job>
+            <app-card-job></app-card-job>
+        </div>
+        <div class="messeges-container">
+            <div class="messeges">
+                <div class="icons-messeges">
+                    <div [style.text-align]="'center'" [style.cursor]="'pointer'" (click)="toggleBtnShow()">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="#850082">
+                            <path
+                                d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h360v80H200v560h560v-360h80v360q0 33-23.5 56.5T760-120H200Zm120-160v-80h320v80H320Zm0-120v-80h320v80H320Zm0-120v-80h320v80H320Zm360-80v-80h-80v-80h80v-80h80v80h80v80h-80v80h-80Z" />
+                        </svg>
+                        <p>Agregar</p>
+                    </div>
+                    <div [style.text-align]="'center'" [style.cursor]="'pointer'">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="#850082">
+                            <path
+                                d="M480-480ZM202-65l-56-57 118-118h-90v-80h226v226h-80v-89L202-65Zm278-15v-80h240v-440H520v-200H240v400h-80v-400q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H480Z" />
+                        </svg>
+                        <p>Exportar a excel</p>
+                    </div>
+                </div>
+                <h3>"Los tiempos duros hacen hombres duros y los hombres duros hacen tiempos fáciles"</h3>
+            </div>
+        </div>
+
+      }@else if(showModal){
+        <div class="edit-out">
+            <div class="edit-icon-close">
+                X
+            </div>
+            
+            <div class="container-form">
+                <form action=""  [formGroup]="formRegister" (submit)="registerSubmit()">
+
+                    <div class="input-form">
+                        <label for="nameCompany">Nombre de la empresa</label>
+                        <input type="text" name="nameCompany" id="nameCompany" formControlName="nameCompany">
+                    </div>
+                    <div class="input-form">
+                        <label for="rol">Cargo o rol</label>
+                        <input type="text" name="rol" id="rol" formControlName="rol">
+                    </div>
+                    <div class="input-form">
+                        <label for="url">URL de la oferta laboral</label>
+                        <input type="text" name="url" id="url" formControlName="url">
+                    </div>
+                    <div class="input-form">
+                        <label for="status">Estatus</label>
+                       <select name="status" id="status" formControlName="status">
+                        <option value="Aplicado">Aplicado</option>
+                        <option value="En proceso">En proceso</option>
+                       </select>
+                    </div>
+                    <div class="btns-form">
+                        <button class="btn-save">Guardar</button>
+                        <button type="button" class="btn-cancel" (click)="toggleBtnShow()">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+      }
+       
+
+    </div>
+
+
+</div>
