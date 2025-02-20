@@ -15,7 +15,7 @@
 
 .card {
     width: 100%;
-   
+    
 
     .header-card {
         display: flex;
@@ -64,8 +64,16 @@
     .content-card {
         margin-top: 6px;
 
-        .url-job {
-            font-weight: bold;
+        p {
+            word-break: break-all;
+
+            .url-job {
+                font-weight: bold;
+            }
+
+            a {
+                text-decoration: none;
+            }
         }
     }
 
