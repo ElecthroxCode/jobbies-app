@@ -9,20 +9,20 @@
             <legend><h3>Registro de usuario</h3></legend>
             <form action="">
                 <div class="data-text">
-                    <label for="">Tu nombre completo</label>
-                    <input type="text" name="" id="">
+                    <label for="fullname">Tu nombre completo</label>
+                    <input type="text" name="" id="fullname">
                 </div>
                 <div class="data-text">
-                    <label for="">Tu correo eléctronico</label>
-                    <input type="text" name="" id="">
+                    <label for="email">Tu correo eléctronico</label>
+                    <input type="text" name="" id="email">
                 </div>
                 <div class="data-text">
-                    <label for="">Tu contraseña</label>
-                    <input type="password" name="" id="">
+                    <label for="password">Tu contraseña</label>
+                    <input type="password" name="" id="password">
                 </div>
                 <div class="data-text">
-                    <label for="">Repite tu contraseña</label>
-                    <input type="password" name="" id="">
+                    <label for="password-reapet">Repite tu contraseña</label>
+                    <input type="password" name="" id="password-reapet">
                 </div>
                 <div class="data-text">
                     <button type="button">Registrarse</button>
@@ -33,19 +33,23 @@
        
         <fieldset>
             <legend><h3>Inicio de sesión</h3></legend>
-            <form action="">
+            <form action="" [formGroup]="formLogin" (submit)="loginSubmit()">
                 
                 <div class="data-text">
-                    <label for="email">Correo eléctronico</label>
-                    <input type="text" name="" id="email">
+                    <label for="emailLogin">Correo eléctronico</label>
+                    <input type="text" name="" id="emailLogin" formControlName="userLogin">
+                    @if (formLogin.get('usernameLogin')?.errors?.['required'] && 
+                    formLogin.get('usernameLogin')?.touched) {
+                   <div class="error">El username es requerido</div>
+                    }
                 </div>
                 <div class="data-text">
-                    <label for="">Contraseña</label>
-                    <input type="password" name="" id="">
+                    <label for="passwordLogin">Contraseña</label>
+                    <input type="password" name="" id="passwordLogin" formControlName="passLogin">
                 </div>
                
                 <div class="data-text">
-                    <button type="button">Iniciar sesión</button>
+                    <button type="submit">Iniciar sesión</button>
                 </div>
             </form>
         </fieldset>

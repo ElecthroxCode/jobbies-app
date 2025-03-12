@@ -3,16 +3,10 @@
     <div class="content">
       @if (!showModal) {
         <div class="cards">
-            <app-card-job></app-card-job>
-            <app-card-job></app-card-job>
-            <app-card-job></app-card-job>
-            <app-card-job></app-card-job>
-            <app-card-job></app-card-job>
-            <app-card-job></app-card-job>
-            <app-card-job></app-card-job>
-            <app-card-job></app-card-job>
-            <app-card-job></app-card-job>
-            <app-card-job></app-card-job>
+         @for (jobUser of user?.jobs; track jobUser.id) {
+                <app-card-job [job]="jobUser"></app-card-job>
+         }
+            
         </div>
         <div class="messeges-container">
             <div class="messeges">

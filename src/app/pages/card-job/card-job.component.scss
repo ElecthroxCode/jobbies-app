@@ -21,6 +21,10 @@
         display: flex;
         justify-content: space-between;
 
+        .nav-card{
+            max-width: 480px;
+        }
+
         .status-job {
             background-color: rgb(114, 214, 114);
             padding: 0px 12px;

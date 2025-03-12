@@ -1,5 +1,6 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, Input, OnInit } from '@angular/core';
 import { UtilsService } from '../../services/utils.service';
+import { Job } from '../../models/user-model';
 
 @Component({
   selector: 'app-card-job',
@@ -8,6 +9,9 @@ import { UtilsService } from '../../services/utils.service';
   styleUrl: './card-job.component.scss'
 })
 export class CardJobComponent implements OnInit{
+
+
+  @Input({required:true}) job?:Job;
   private _isModal$ = inject(UtilsService);
   showModal!:boolean;
 
