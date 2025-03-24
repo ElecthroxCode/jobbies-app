@@ -3,10 +3,10 @@
     <div class="content">
       @if (!showModal) {
         <div class="cards">
-         @for (jobUser of user?.jobs; track jobUser.id) {
-                <app-card-job [job]="jobUser"></app-card-job>
+         @for (jobUser of jobs; track jobUser.id) {
+                <app-card-job [job]="jobUser" (editJob)="editForm($event)"></app-card-job>
          }
-            
+
         </div>
         <div class="messeges-container">
             <div class="messeges">
@@ -28,7 +28,7 @@
                         <p>Exportar a excel</p>
                     </div>
                 </div>
-                <h3>"Los tiempos duros hacen hombres duros y los hombres duros hacen tiempos fáciles"</h3>
+                <h4>"Los tiempos duros hacen hombres duros y los hombres duros hacen tiempos fáciles"</h4>
             </div>
         </div>
 
@@ -40,14 +40,14 @@
             
             <div class="container-form">
                 <form action=""  [formGroup]="formRegister" (submit)="registerSubmit()">
-
+                    
                     <div class="input-form">
                         <label for="nameCompany">Nombre de la empresa</label>
                         <input type="text" name="nameCompany" id="nameCompany" formControlName="nameCompany">
                     </div>
                     <div class="input-form">
                         <label for="rol">Cargo o rol</label>
-                        <input type="text" name="rol" id="rol" formControlName="rol">
+                        <input type="text" name="rol" id="rol" formControlName="rolJob">
                     </div>
                     <div class="input-form">
                         <label for="url">URL de la oferta laboral</label>
@@ -58,12 +58,18 @@
                        <select name="status" id="status" formControlName="status">
                         <option value="Aplicado">Aplicado</option>
                         <option value="En proceso">En proceso</option>
+                        <option value="Sin aplicar">Sin aplicar</option>
                        </select>
+                    </div>
+                    <div class="input-form">
+                        <label for="dateJob">Fecha de aplicación</label>
+                        <input type="date" name="dateJob" id="dateJob" formControlName="date">
                     </div>
                     <div class="btns-form">
                         <button class="btn-save">Guardar</button>
                         <button type="button" class="btn-cancel" (click)="toggleBtnShow()">Cancelar</button>
                     </div>
+                
                 </form>
             </div>
         </div>

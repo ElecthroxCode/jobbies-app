@@ -23,14 +23,20 @@
 
         .nav-card{
             max-width: 480px;
+            h2{
+                margin-right: 10px;
+                font-size: 1.6rem;
+            }
         }
 
         .status-job {
-            background-color: rgb(114, 214, 114);
+            background-color: #72d672;
             padding: 0px 12px;
             border-start-start-radius: 10px;
             border-end-end-radius: 10px;
             max-height: 20px;
+            width: 7rem;
+            text-align: center;
             font-weight: 500;
         }
 

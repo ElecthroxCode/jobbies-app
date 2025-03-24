@@ -1,4 +1,4 @@
-import { Component, inject, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, inject, input, Input, OnInit, output, Output } from '@angular/core';
 import { UtilsService } from '../../services/utils.service';
 import { Job } from '../../models/user-model';
 
@@ -11,7 +11,9 @@ import { Job } from '../../models/user-model';
 export class CardJobComponent implements OnInit{
 
 
-  @Input({required:true}) job?:Job;
+  job = input.required<Job>();
+  editJob = output<boolean>();
+
   private _isModal$ = inject(UtilsService);
   showModal!:boolean;
 
@@ -24,18 +26,33 @@ export class CardJobComponent implements OnInit{
    );
  }
 
+
  btnEdit(){
+  if(this.job() != null){
+   
+    this._isModal$.setEditState(this.job());
+    this.editJob.emit(true);
+  }
   if(!this.showModal){
     this.showModal = true;
     this._isModal$.setIsModalOpen(this.showModal);
     return;
   }
+  
   this.showModal = false;
   this._isModal$.setIsModalOpen(this.showModal);
  }
  
 
 
-
+ changeColorStatus(status:string){
+  if(status.toLocaleLowerCase() == 'aplicado'){
+    return '#72d672';
+  }
+  if(status.toLocaleLowerCase() == 'en proceso'){
+    return '#ffff81';
+  }
+  return '#ffaf8f';
+}
 
 }

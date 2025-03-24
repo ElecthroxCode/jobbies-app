@@ -9,7 +9,7 @@ export interface User {
 }
 
 export interface Job {
-    id:          string;
+    id:          string | null;
     nameCompany: string;
     rolJob:      string;
     url:         string;
