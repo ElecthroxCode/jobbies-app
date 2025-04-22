@@ -74,7 +74,7 @@ export class RegisterComponent implements OnInit {
       const loginUser:Login = {username:userLoginControl.value, password:passLoginControl.value};
       this._authService.login(loginUser).subscribe({
         next: data => {
-          this._authService.setToken(data.jwt);
+          this._authService.setToken(data.jwt, data.refreshToken);
           this._authService.setUsername(data.username);
           this._authService.redirectToHome();
         },

@@ -7,6 +7,7 @@ export interface Login{
 
 
 export interface LoginResponse{
+    refreshToken:string,
     jwt:string,
     msg:string,
     status:boolean,
